@@ -12,11 +12,13 @@ import {TableModule} from 'primeng/table';
 
 import {TooltipModule} from 'primeng/tooltip';
 
-import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
+import { LancamentosPesquisaComponent } from './lancamentos/lancamentos-pesquisa/lancamentos-pesquisa.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 
 import {InputTextareaModule} from 'primeng/inputtextarea';
+
+import {InputMaskModule} from 'primeng/inputmask';
 
 import {CalendarModule} from 'primeng/calendar';
 
@@ -26,11 +28,15 @@ import {MultiSelectModule} from 'primeng/multiselect';
 
 import { CurrencyMaskModule } from "ng2-currency-mask";
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
+import { PessoasPesquisaComponent } from './pessoas/pessoas-pesquisa/pessoas-pesquisa.component';
 
-import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
+import { LancamentoCadastroComponent } from './lancamentos/lancamento-cadastro/lancamento-cadastro.component';
+
+import { PessoaCadastroComponent } from './pessoas/pessoa-cadastro/pessoa-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,8 @@ import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-ca
     LancamentosPesquisaComponent,
     NavbarComponent,
     PessoasPesquisaComponent,
-    LancamentoCadastroComponent
+    LancamentoCadastroComponent,
+    PessoaCadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,9 @@ import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-ca
     BrowserAnimationsModule,
     SelectButtonModule,
     MultiSelectModule,
-    CurrencyMaskModule 
+    CurrencyMaskModule,
+    InputMaskModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

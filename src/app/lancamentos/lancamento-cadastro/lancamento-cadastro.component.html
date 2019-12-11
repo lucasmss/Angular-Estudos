@@ -11,11 +11,11 @@
 
             <div class="ui-g-6 ui-md-3 ui-fluid">
                 <label>Vencimento</label>
-              <p-calendar dateFormat="dd/mm/yy"></p-calendar>
+                <p-calendar dateFormat="dd/mm/yy"></p-calendar>
             </div>
             <div class="ui-g-6 ui-md-3 ui-fluid">
                 <label>{{tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagameto'}}</label>
-              <p-calendar dateFormat="dd/mm/yy"></p-calendar>
+                <p-calendar dateFormat="dd/mm/yy"></p-calendar>
             </div>
             <div class="ui-g-6 ui-md-9 ui-fluid">
                 <label>Descrição</label>
@@ -23,8 +23,8 @@
             </div>
             <div class="ui-g-6 ui-md-3 ui-fluid">
                 <label>Valor</label>
-                <input pInputText type="text" placeholder="0,00" currencyMask
-                [options]="{prefix: 'R$', thousands: '.', decimal: ','}">
+                <input pInputText type="text" placeholder="0,00" name="valor" currencyMask
+                    [options]="{prefix: 'R$', thousands: '.', decimal: ','}" ngModel>
             </div>
             <div class="ui-g-6 ui-md-6 ui-fluid">
                 <label>Categoria</label>
@@ -34,19 +34,15 @@
                 <label>Pessoa</label>
                 <p-multiSelect [options]="pessoas"></p-multiSelect>
             </div>
-            <div class="ui-g-6 ui-fluid">
+            <div class="ui-g-12 ui-fluid">
                 <label>Observação</label>
                 <textarea pInputTextarea rows="3"></textarea>
             </div>
             <div class="ui-g-12">
-                <button pButton type="submit" label="Salvar"></button>
-                <button pButton type="button" label="Novo" class="ui-button-info"></button>
+                <button pButton type="submit" label="Salvar" style="margin-right: 10px;"></button>
+                <button pButton type="button" label="Novo" class="ui-button-info" style="margin-right: 10px;"></button>
                 <a href="javascript:;">Voltar para a Pesquisa</a>
             </div>
-
-
-
-
 
         </div>
 

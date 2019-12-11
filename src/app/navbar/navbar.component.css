@@ -28,9 +28,10 @@
     margin-bottom: 15px;
     border-bottom: 1px solid #525151;
 
+    color: #ffffff;
     text-transform:  uppercase;
     font-weight: bold;
-    color: #ffffff;
+    
 }
 
 .navbar-menuitem {
@@ -40,6 +41,10 @@
 .navbar-menuitem a {
     color: #c0bbb7;
     text-decoration: none;
+}
+
+.navbar-menuitem a:hover {
+    color: #ffffff;
 }
 
 .navbar-menuitem {

@@ -13,16 +13,15 @@
       <div class="ui-g-12">
     
           <label style="display: block">Vencimento</label>
-          <input pInputText type="text" style="width: 95px">
-    
+          <p-calendar dateFormat="dd/mm/yy"></p-calendar>
           <label>até</label>
-          <input pInputText type="text" style="width: 95px">
+          <p-calendar dateFormat="dd/mm/yy"></p-calendar>
     
       </div>
     
       <div class="ui-g-12">
     
-        <button pButton type="submit" label="pesquisar"></button>
+        <p-button label="Pesquisar" ></p-button>
     
       </div>
     
@@ -31,7 +30,7 @@
         <div class="ui-g-12">
     
           <p-table [value]="lancamentos" [responsive]="true"
-          [paginator]="true" [rows]="filtro.itensPorPagina"
+          [paginator]="true" [rows]="2"
           [lazy]="true" [totalRecords]="totalRegistros"
           (onLazyLoad)="aoMudarPagina($event)"
           #tabela>
@@ -56,11 +55,9 @@
                       {{lancamentos.valor | number: '1.2-2' }}
                     </td>
                     <td class="col-acoes">
-                     
-                      <button pButton icon="fa-trash"
-                      pTooltip="Excluir" tooltipPosition="top"
-                      (click)="confirmarExclusao(lancamentos)"
-                      [disabled]="!auth.temPermissao('ROLE_REMOVER_LANCAMENTO')"></button>
+                     <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" style="margin-right: 15px;"></button>
+                     <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+
                     </td>
                 </tr>
             </ng-template>
@@ -76,7 +73,10 @@
     
         </div>
     
-    
+      </div>
+
+      <div class="ui-g-12">
+       <p-button label="Novo Lançamento" ></p-button>
       </div>
     
     </div>
