@@ -37,6 +37,8 @@ import { PessoasPesquisaComponent } from './pessoas/pessoas-pesquisa/pessoas-pes
 import { LancamentoCadastroComponent } from './lancamentos/lancamento-cadastro/lancamento-cadastro.component';
 
 import { PessoaCadastroComponent } from './pessoas/pessoa-cadastro/pessoa-cadastro.component';
+import { LancamentoService } from './lancamentos/lancamento.service';
+import { Proxy } from './proxy.config.js/proxy.config.js.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { PessoaCadastroComponent } from './pessoas/pessoa-cadastro/pessoa-cadast
     NavbarComponent,
     PessoasPesquisaComponent,
     LancamentoCadastroComponent,
-    PessoaCadastroComponent
+    PessoaCadastroComponent,
+    Proxy.Config.JsComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,7 @@ import { PessoaCadastroComponent } from './pessoas/pessoa-cadastro/pessoa-cadast
     InputMaskModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LancamentoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

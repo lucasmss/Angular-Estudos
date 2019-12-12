@@ -15,22 +15,13 @@ export class LancamentoService {
 
   constructor(private http: HttpClient) { }
 
-  pesquisar(filtro: any): Promise<any> {
-    const params = new URLSearchParams();
-    const headers = new Headers();
-
-    headers.append('Authorization', 'Basic admin');
-
-    if (filtro.descricao){
-      params.set('descricao', filtro.descricao);
-    }
-
-    return this.http.get(`${this.lancamentoUrl}?resumo`,
-    {headers,  search: filtro})
-    .toPromise()
-    .then(respose => respose.jason().content)
-
-
+  pesquisar(): Promise<any> {
+    
+   return this.http.get(this.lancamentoUrl)
+      .toPromise()
+      .then(Response => Response.json.content);
+  
+      
   }
 
   
