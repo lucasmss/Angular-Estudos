@@ -21,9 +21,7 @@
         <div class="ui-g-12">
     
           <p-table [value]="pessoas" [responsive]="true"
-          [paginator]="true" [rows]="2"
-          [lazy]="true" [totalRecords]="totalRegistros"
-          (onLazyLoad)="aoMudarPagina($event)"
+          [paginator]="true" [rows]="3"
           #tabela>
             <ng-template pTemplate="header">
                 <tr>

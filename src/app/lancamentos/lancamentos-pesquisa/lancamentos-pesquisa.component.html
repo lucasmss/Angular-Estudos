@@ -1,13 +1,14 @@
 <div class="container">
     <div class="ui-g">
-    
+    <form autocomplete="off" (ngSubmit)="Pesquisar()">
       <div class="ui-g-12">
         <h1>Lançamento</h1>
       </div>
     
       <div class="ui-g-12 ui-fluid">
         <label>Descrição</label>
-        <input pInputText type="text">
+        <input pInputText type="text" name="descricao"
+        (ngModel)="descricao">
       </div>
     
       <div class="ui-g-12">
@@ -24,15 +25,14 @@
         <p-button label="Pesquisar" ></p-button>
     
       </div>
+    </form>
     
       <div class="ui-g">
     
         <div class="ui-g-12">
     
           <p-table [value]="lancamentos" [responsive]="true"
-          [paginator]="true" [rows]="2"
-          [lazy]="true" [totalRecords]="totalRegistros"
-          (onLazyLoad)="aoMudarPagina($event)"
+          [paginator]="true" [rows]="5"
           #tabela>
             <ng-template pTemplate="header">
                 <tr>
