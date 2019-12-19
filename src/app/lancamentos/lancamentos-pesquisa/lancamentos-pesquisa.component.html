@@ -8,7 +8,7 @@
       <div class="ui-g-12 ui-fluid">
         <label>Descrição</label>
         <input pInputText type="text" name="descricao"
-        (ngModel)="descricao">
+        (ngModel)="filtro.descricao">
       </div>
     
       <div class="ui-g-12">
@@ -45,9 +45,9 @@
                 </tr>
             </ng-template>
 
-            <ng-template pTemplate="body" let-lancamentos>
+            <ng-template let-lanc="rowData" pTemplate="body" let-lancamentos>
                 <tr>
-                    <td>{{lancamentos.pessoa}}</td>
+                    <td>{{lancamentos.pessoa.nome}}</td>
                     <td>{{lancamentos.descricao}}</td>
                     <td class="col-data">{{lancamentos.dataVencimento | date: 'dd/MM/yyyy' }}</td>
                     <td class="col-data">{{lancamentos.dataPagamento | date: 'dd/MM/yyyy' }}</td>
@@ -56,7 +56,7 @@
                     </td>
                     <td class="col-acoes">
                      <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" style="margin-right: 15px;"></button>
-                     <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+                     <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="excluir()"></button>
 
                     </td>
                 </tr>

@@ -2,6 +2,12 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 
+export class Pessoa {
+ 
+  codigo:number;
+  nome:string;				
+  ativo:boolean;
+}
 @Injectable()
 export class PessoaService {
 
