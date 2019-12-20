@@ -11,6 +11,7 @@ export class LancamentosPesquisaComponent implements OnInit{
   filtro = new LancamentoFiltro();
   lancamentos = [];
 
+
   constructor(private lancamentoService: LancamentoService) { }
 
     ngOnInit(){

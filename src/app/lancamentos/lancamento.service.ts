@@ -48,7 +48,7 @@ export class LancamentoService {
 
   excluir(codigo: number): Promise<void> {
      const headers = new HttpHeaders();
-     headers.append('Authorization', 'Basic');
+     headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
    
    return this.http.delete(`${this.lancamentoUrl}/${codigo}`, {headers})
    .toPromise()
