@@ -33,10 +33,6 @@ export class LancamentosPesquisaComponent implements OnInit{
       });
     }
 
-
-
-
-
 }
 
 

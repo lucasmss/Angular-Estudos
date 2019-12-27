@@ -28,12 +28,10 @@ export class LancamentoService {
 
   pesquisar(filtro: LancamentoFiltro): Promise<any> {
    const params = new HttpParams;
-   const headers = new HttpHeaders();
+   const headers = new HttpHeaders().append('Username', 'admin') .append('Password', 'admin');
 
    params.set('page', filtro.pagina.toString());
    params.set('size', filtro.itensPorPagina.toString());
-
-   headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
 
    if(filtro.descricao) {
       params.set('descricao', filtro.descricao.toString());
@@ -47,9 +45,8 @@ export class LancamentoService {
   }
 
   excluir(codigo: number): Promise<void> {
-     const headers = new HttpHeaders();
-     headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
-   
+     const headers = new HttpHeaders().append('Username', 'admin') .append('Password', 'admin');
+    
    return this.http.delete(`${this.lancamentoUrl}/${codigo}`, {headers})
    .toPromise()
    .then(() => null);
